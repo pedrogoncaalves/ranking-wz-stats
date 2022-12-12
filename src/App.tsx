@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import './App.css'
-import { Ranking } from './components/Ranking'
+import { RankingTable } from './components/RankingTable'
+import { TableContainer } from './components/TableContainer'
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <div className="App">
-      <Ranking/>
+      <TableContainer/>
+      <RankingTable/>
     </div>
   )
 }

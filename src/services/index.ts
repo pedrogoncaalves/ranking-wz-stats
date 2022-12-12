@@ -2,7 +2,7 @@
 import axios from "axios";
 
 
-const baseURL = axios.create({
+ /* const baseURL = axios.create({
     method: 'GET',
     url: 'https://call-of-duty-modern-warfare.p.rapidapi.com/warzone',
     headers: {
@@ -13,6 +13,30 @@ const baseURL = axios.create({
 
 
   export const getUsersStats = (gamertag: string, platform: string) => {
-    return axios.get(`${gamertag}/${platform}`)
+    return baseURL.get(`${gamertag}/${platform}`)
 
+  } */
+
+   const options = {
+    method: 'GET',
+    url: 'https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/Amartin743/psn',
+    headers: {
+      'X-RapidAPI-Key': '0d9c2c3b7emsh90e4a4cc612ee27p161090jsnc6c18284a60d',
+      'X-RapidAPI-Host': 'call-of-duty-modern-warfare.p.rapidapi.com'
+    }
+  };
+  
+  export function renderUser() {
+    return axios.request(options).then(function (response) {
+    
+      const user = response.data.data?.username
+      console.log(response.data.data);
+      console.log(user)
+  }).catch(function (error) {
+      console.error(error);
+  });
+  
   }
+
+  export default options; 
+
