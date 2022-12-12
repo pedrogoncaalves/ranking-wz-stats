@@ -26,15 +26,18 @@ import axios from "axios";
     }
   };
   
-  export function renderUser() {
-    return axios.request(options).then(function (response) {
-    
-      const user = response.data.data?.username
-      console.log(response.data.data);
-      console.log(user)
-  }).catch(function (error) {
+  export async function renderUser() {
+    try {
+
+      const response = await axios.request(options);
+      const userData = response.data.data
+      console.log(userData);
+      return userData
+      
+      
+    } catch (error) {
       console.error(error);
-  });
+    }
   
   }
 

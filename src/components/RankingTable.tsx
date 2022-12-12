@@ -1,46 +1,49 @@
 
 import React, {useState, useEffect} from "react";
-import options from "../services";
-import axios from "axios";
+
 import { renderUser } from "../services";
 
 
 type User = {
   username: string;
-  wins: number;
+  lifetime: {
+    mode: {
+      br: {
+        properties: {
+          wins: number;
   kdRatio: number;
+  kills: number;
+  scorePetMinute: number;
+        }
+      }
+    }
+  }
+
 
 }
 
 
-export const RankingTable = ({ username, wins, kdRatio}: User) => {
+export const RankingTable = () => {
 
-  const [user, setUser] = useState<User[]>([]);
+  const [user, setUser] = useState<User | null>(null);
 
 
   useEffect(() => {
          const getData = async () => {
            try {
                 
-                const response = await renderUser();
+                const response =  await renderUser();
+                
                 setUser(response)
 
              } catch (error) {
-                 console.log("Algo deu errado no Post" + error)
+                 console.log("Algo deu errado ao carregar usuário" + error)
              }
          }
          getData();
      }, [setUser])
 
-   /* axios.request(options).then(function (response) {
-    
-    const user = response.data.data?.username
-    console.log(response.data.data);
-    console.log(user)
-}).catch(function (error) {
-    console.error(error);
-});
- */ 
+   
     return(
         <table>
   <tr>
@@ -49,9 +52,9 @@ export const RankingTable = ({ username, wins, kdRatio}: User) => {
     <th>Wins</th>
   </tr>
   <tr>
-    <td>{user.u}</td>
-    <td>Maria Anders</td>
-    <td>Germany</td>
+    <td>{user?.username}</td>
+    <td>{user?.lifetime.mode.br.properties.kdRatio.toFixed(3)}</td>
+    <td>KD alto</td>
   </tr>
   <tr>
     <td>Centro comercial Moctezuma</td>
