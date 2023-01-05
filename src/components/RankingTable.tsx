@@ -53,7 +53,7 @@ export const RankingTable = () => {
   </tr>
   <tr>
     <td>{user?.username}</td>
-    <td>{user?.lifetime.mode.br.properties.kdRatio.toFixed(3)}</td>
+    <td>{user?.lifetime.mode.br.properties.kdRatio.toFixed(2)}</td>
     <td>{user?.lifetime.mode.br.properties.wins}</td>
   </tr>
   <tr>
