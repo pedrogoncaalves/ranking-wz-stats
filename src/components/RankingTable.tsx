@@ -28,7 +28,7 @@ export const RankingTable = () => {
   const [user, setUser] = useState<User | null>(null);
 
 
-  useEffect(() => {
+ /* useEffect(() => {
          const getData = async () => {
            try {
                 
@@ -42,45 +42,18 @@ export const RankingTable = () => {
          }
          getData();
      }, [setUser])
-
+*/
    
     return(
-        <table>
-  <tr>
-    <th>Username</th>
-    <th>K.D</th>
-    <th>Wins</th>
-  </tr>
-  <tr>
-    <td>{user?.username}</td>
-    <td>{user?.lifetime.mode.br.properties.kdRatio.toFixed(2)}</td>
-    <td>{user?.lifetime.mode.br.properties.wins}</td>
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
-  <tr>
-    <td>Ernst Handel</td>
-    <td>Roland Mendel</td>
-    <td>Austria</td>
-  </tr>
-  <tr>
-    <td>Island Trading</td>
-    <td>Helen Bennett</td>
-    <td>UK</td>
-  </tr>
-  <tr>
-    <td>Laughing Bacchus Winecellars</td>
-    <td>Yoshi Tannamuri</td>
-    <td>Canada</td>
-  </tr>
-  <tr>
-    <td>Magazzini Alimentari Riuniti</td>
-    <td>Giovanni Rovelli</td>
-    <td>Italy</td>
-  </tr>
-</table>
+      <>
+      
+      
+<form>
+
+<input type="text" placeholder="Digite sua gamertag">
+
+</input>
+</form>
+</>
     )
 }

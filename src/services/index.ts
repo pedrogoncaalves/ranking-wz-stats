@@ -8,13 +8,12 @@ import axios from "axios";
     {gamertag: 'Amartin743', platform: 'psn'},
     {gamertag: 'pedrogoncaalves', platform: 'psn'},
     {gamertag: 'Karnz24', platform: 'psn'},
-    
-
   ]
 
    const options = {
     method: 'GET',
-    url: `https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/${usersList[4].gamertag}/${usersList[4].platform}`,
+
+    url: `https://call-of-duty-modern-warfare.p.rapidapi.com/warzone/${usersList[1].gamertag}/${usersList[1].platform}`, 
     headers: {
       'X-RapidAPI-Key': '0d9c2c3b7emsh90e4a4cc612ee27p161090jsnc6c18284a60d',
       'X-RapidAPI-Host': 'call-of-duty-modern-warfare.p.rapidapi.com'

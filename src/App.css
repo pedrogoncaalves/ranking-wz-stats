@@ -25,23 +25,6 @@ body, html {
   
 }
 
-table {
-  font-family: 'Oswald', sans-serif;
-  
-  border: 1px solid #FFFFFF1A;
-  
-  border-radius: 15px;
-  width: 60%;
-  align-items: center;
-  margin-top: 150px
-}
-
-td, th {
-  
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #FFFFFF1A;
+form {
+  margin-top: 50px;
 }
