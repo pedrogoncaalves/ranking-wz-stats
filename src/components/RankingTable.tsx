@@ -18,14 +18,16 @@ type User = {
       }
     }
   }
-
-
+}
+type Platform = {
+  platform: string;
 }
 
 
 export const RankingTable = () => {
 
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<User>("");
+  const [platform, setPlatform] = useState<Platform>("");
 
 
  /* useEffect(() => {
@@ -50,9 +52,12 @@ export const RankingTable = () => {
       
 <form>
 
-<input type="text" placeholder="Digite sua gamertag">
+<input type="text" placeholder="Digite sua gamertag" value={user} onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setUser(event.target.value)}></input>
+<input type="text" placeholder= "Digite sua plataforma" value={platform}  onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setPlatform(event.target.value)}></input>
 
-</input>
+<button type="submit">🔎</button>
 </form>
 </>
     )

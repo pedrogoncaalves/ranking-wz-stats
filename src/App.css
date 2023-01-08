@@ -11,7 +11,9 @@ body, html {
 
 }
 
-
+h1 {
+  margin-top: 150px;
+}
 
 
 .App {
@@ -19,12 +21,26 @@ body, html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  
   box-sizing: border-box;
   
 }
 
 form {
   margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+input {
+  margin-top: 50px;
+  font-family: 'Oswald', sans-serif;
+  background: #FFFFFF1A;
+  padding: 5px;
+  border-radius: 10px;
+  width: 20rem;
+  border-color: transparent;
+  color: #FFFFFF;
+  font-size: 18px;
 }
