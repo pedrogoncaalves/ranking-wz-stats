@@ -21,7 +21,8 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
   
 }
@@ -43,4 +44,11 @@ input {
   border-color: transparent;
   color: #FFFFFF;
   font-size: 18px;
+}
+
+button {
+  margin-top: 40px;
+  background: transparent;
+  border-color: transparent;
+  cursor: pointer;
 }

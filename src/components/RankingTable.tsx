@@ -29,28 +29,24 @@ export const RankingTable = () => {
   const [user, setUser] = useState<User>("");
   const [platform, setPlatform] = useState<Platform>("");
 
+  const handleSubmit = async (event: FormEvent) => {
+    event.preventDefault();
+    try {
+        const response = await renderUser( user, platform );
+        console.log(response)
+       
+        
+    } catch (error) {
+        console.log(error)
+        alert("Opa! Deu algo errado!");
+    }
+};
 
- /* useEffect(() => {
-         const getData = async () => {
-           try {
-                
-                const response =  await renderUser();
-                
-                setUser(response)
-
-             } catch (error) {
-                 console.log("Algo deu errado ao carregar usuário" + error)
-             }
-         }
-         getData();
-     }, [setUser])
-*/
-   
     return(
       <>
       
       
-<form>
+<form onSubmit={handleSubmit}>
 
 <input type="text" placeholder="Digite sua gamertag" value={user} onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                   setUser(event.target.value)}></input>
