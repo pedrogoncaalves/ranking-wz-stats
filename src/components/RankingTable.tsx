@@ -26,13 +26,13 @@ type Platform = {
 
 export const RankingTable = () => {
 
-  const [user, setUser] = useState<User>("");
+  const [gamertag, setGamertag] = useState<User>("");
   const [platform, setPlatform] = useState<Platform>("");
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     try {
-        const response = await renderUser( user, platform );
+        const response = await renderUser( gamertag, platform );
         console.log(response)
        
         
@@ -48,8 +48,8 @@ export const RankingTable = () => {
       
 <form onSubmit={handleSubmit}>
 
-<input type="text" placeholder="Digite sua gamertag" value={user} onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
-                  setUser(event.target.value)}></input>
+<input type="text" placeholder="Digite sua gamertag" value={gamertag} onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
+                  setGamertag(event.target.value)}></input>
 <input type="text" placeholder= "Digite sua plataforma" value={platform}  onChange={(event: React.ChangeEvent<HTMLInputElement>) =>
                   setPlatform(event.target.value)}></input>
 
