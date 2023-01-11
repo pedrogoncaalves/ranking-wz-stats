@@ -33,6 +33,7 @@ export const RankingTable = () => {
     event.preventDefault();
     try {
         const response = await renderUser( gamertag, platform );
+        
         console.log(response)
        
         
@@ -44,7 +45,6 @@ export const RankingTable = () => {
 
     return(
       <>
-      
       
 <form onSubmit={handleSubmit}>
 
