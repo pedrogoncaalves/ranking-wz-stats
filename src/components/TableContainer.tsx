@@ -1,6 +1,3 @@
-import axios from 'axios';
-import options from '../services';
-
 
 
 export const TableContainer  = () => {

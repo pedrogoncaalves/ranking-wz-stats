@@ -28,12 +28,13 @@ export const RankingTable = () => {
 
   const [gamertag, setGamertag] = useState<User>("");
   const [platform, setPlatform] = useState<Platform>("");
+  const [userStats, setUserStats] = useState<User>("");
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     try {
         const response = await renderUser( gamertag, platform );
-        
+        setUserStats(response.data)
         console.log(response)
        
         
@@ -55,6 +56,7 @@ export const RankingTable = () => {
 
 <button type="submit">🔎</button>
 </form>
+<span>{userStats.username}</span>
 </>
     )
 }
