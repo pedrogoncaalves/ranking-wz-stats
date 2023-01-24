@@ -2,6 +2,17 @@
 import React, {useState, useEffect} from "react";
 
 import { renderUser } from "../services";
+import userIcon from '../assets/user.png'
+
+const TableContainer  = () => {
+
+  return(
+      <>
+      <h1>Acesse suas estatísticas no Warzone!</h1>
+      
+      </>
+  )
+}
 
 
 type User = {
@@ -34,7 +45,7 @@ export const RankingTable = () => {
     event.preventDefault();
     try {
         const response = await renderUser( gamertag, platform );
-        setUserStats(response.data)
+        setUserStats(response)
         console.log(response)
        
         
@@ -46,6 +57,7 @@ export const RankingTable = () => {
 
     return(
       <>
+      <TableContainer/>
       
 <form onSubmit={handleSubmit}>
 
@@ -56,7 +68,10 @@ export const RankingTable = () => {
 
 <button type="submit">🔎</button>
 </form>
-<span>{userStats.username}</span>
+<strong>
+   <img width={20} height={20}src={userIcon}/>
+{userStats.username}</strong>
+
 </>
     )
 }

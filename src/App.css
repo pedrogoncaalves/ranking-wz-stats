@@ -52,3 +52,15 @@ button {
   border-color: transparent;
   cursor: pointer;
 }
+
+strong {
+  display: flex;
+  padding: 5px;
+  width: 20rem;
+  
+  margin-top: 25px;
+  background-color: #FFFFFF1A;
+  border-radius: 10px;
+
+  
+}
