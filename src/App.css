@@ -51,16 +51,29 @@ button {
   background: transparent;
   border-color: transparent;
   cursor: pointer;
+  
+}
+
+.user__button{
+ 
+  
+  display: flex;
+  justify-content: center;
+  background-color: #FFFFFF1A;
+  width: 20rem;
+  border-radius: 10px;
+  
+
+
+}
+
+img {
+  margin-top: 5px;
+  margin-left: 10px;
 }
 
 strong {
-  display: flex;
-  padding: 5px;
-  width: 20rem;
-  
-  margin-top: 25px;
-  background-color: #FFFFFF1A;
-  border-radius: 10px;
 
   
+
 }

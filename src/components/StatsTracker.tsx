@@ -3,6 +3,7 @@ import React, {useState, useEffect} from "react";
 
 import { renderUser } from "../services";
 import userIcon from '../assets/user.png'
+import { UserModal } from "./UserModal";
 
 const TableContainer  = () => {
 
@@ -15,7 +16,7 @@ const TableContainer  = () => {
 }
 
 
-type User = {
+export type User = {
   username: string;
   lifetime: {
     mode: {
@@ -34,12 +35,18 @@ type Platform = {
   platform: string;
 }
 
+interface ITrackerProps {
+  user: User;
+}
 
-export const RankingTable = () => {
+
+export const RankingTable = ({ user }: ITrackerProps) => {
+
 
   const [gamertag, setGamertag] = useState<User>("");
   const [platform, setPlatform] = useState<Platform>("");
   const [userStats, setUserStats] = useState<User>("");
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
@@ -55,6 +62,16 @@ export const RankingTable = () => {
     }
 };
 
+function handleOpenModal(user: User) {
+  setIsModalVisible(true);
+  
+
+}
+function handleCloseModal(user: User) {
+  setIsModalVisible(false);
+  
+}
+
     return(
       <>
       <TableContainer/>
@@ -68,10 +85,16 @@ export const RankingTable = () => {
 
 <button type="submit">🔎</button>
 </form>
-<strong>
-   <img width={20} height={20}src={userIcon}/>
-{userStats.username}</strong>
+{userStats &&
+<button className="user__button">
+<img width={20} height={20}src={userIcon}/>
+<strong>{userStats.username} </strong> 
+</button>}
 
+
+
+<UserModal visible={isModalVisible}
+user={userStats} onClose={handleCloseModal}/>
 </>
     )
 }
